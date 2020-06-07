@@ -40,9 +40,15 @@ class CalculatorTests: XCTestCase {
         sut = Calculator()
     }
     
+    override func tearDown() {
+        print("XXXX tearDown()")
+        sut = nil
+    }
+    
     func testCalculatorNotNil(){
         print("XXXX testCalculatorNotNil()")
         XCTAssertNotNil(sut, "SUT debería ser not nil en este punto")
     }
+    
 
 }
