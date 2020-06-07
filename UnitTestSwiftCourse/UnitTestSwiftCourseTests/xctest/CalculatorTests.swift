@@ -50,5 +50,18 @@ class CalculatorTests: XCTestCase {
         XCTAssertNotNil(sut, "SUT debería ser not nil en este punto")
     }
     
+    //Método a Probar                 |      Entrada      |       Salida Esperarada
+    //sumar(a: Int, b: Int)           |a = 10, b=20       |30
+    
+    func testAddAssert(){
+        print("XXXX testAddAssert()")
+        //1.- Arrange
+        let resultadoEsperado = 30
+        var resultadoActual: Int
+        //2.- Act
+        resultadoActual = sut.add(n1: 10, n2: 20)
+        //3.- Assert
+        XCTAssertEqual(resultadoEsperado, resultadoActual)
+    }
 
 }
