@@ -27,7 +27,20 @@ restar(int a, int b)            |a = 10, b=20       |-10
 */
 
 import Foundation
+import XCTest
+
+@testable import UnitTestSwiftCourse
 
 class CalculatorTests: XCTestCase {
+    
+    var sut: Calculator!
+    
+    func testCalculatorNotNil(){
+        //XCTAssertNotNil(sut)
+        //XCTAssertNil(sut)
+        sut = Calculator()
+        XCTAssertNotNil(sut)
+        XCTAssertNil(sut)
+    }
     
 }
