@@ -63,5 +63,21 @@ class CalculatorTests: XCTestCase {
         //3.- Assert
         XCTAssertEqual(resultadoEsperado, resultadoActual)
     }
+    
+    func testAddBDD(){
+        print("XXXX testAddBDD()")
+        //1.- Given
+        let resultadoEsperado = 30
+        var resultadoActual: Int
+        //2.- When
+        resultadoActual = sut.add(n1: 10, n2: 20)
+        //3.- Then
+        XCTAssertEqual(resultadoEsperado, resultadoActual)
+    }
+    
+    func testAdd(){
+        print("XXXX testAdd()")
+        XCTAssertEqual(30, sut.add(n1: 10, n2: 20))
+    }
 
 }
