@@ -36,11 +36,8 @@ class CalculatorTests: XCTestCase {
     var sut: Calculator!
     
     func testCalculatorNotNil(){
-        //XCTAssertNotNil(sut)
-        //XCTAssertNil(sut)
         sut = Calculator()
-        XCTAssertNotNil(sut)
-        XCTAssertNil(sut)
+        XCTAssertNotNil(sut, "SUT debería ser not nil en este punto")
     }
     
 }
