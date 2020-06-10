@@ -106,5 +106,10 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(2, try sut.divideByZero(n1: 4, n2: 2))
         XCTAssertThrowsError(try sut.divideByZero(n1: 4, n2: 0))
     }
+    
+    func testDisable(){
+        print("XXXX testDivideByZero()")
+        XCTAssertThrowsError(try sut.divideByZero(n1: 4, n2: 0))
+    }
 
 }
