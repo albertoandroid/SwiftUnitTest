@@ -111,5 +111,11 @@ class CalculatorTests: XCTestCase {
         print("XXXX testDivideByZero()")
         XCTAssertThrowsError(try sut.divideByZero(n1: 4, n2: 0))
     }
+    
+    func testPerformanceExample(){
+        self.measure {
+            sut.divide(n1: 4, n2: 2)
+        }
+    }
 
 }
