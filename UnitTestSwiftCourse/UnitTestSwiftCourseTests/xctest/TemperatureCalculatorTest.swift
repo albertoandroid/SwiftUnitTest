@@ -25,7 +25,12 @@ class TemperatureCalculatorTest: XCTestCase {
     func testToFahrenheit(){
         let expectedResult: Double = -9.4
         let result = sut?.toFahrenheit(degree: -23)
-        
-        XCTAssertEqual(expectedResult, result)
+        XCTAssertEqual(expectedResult, result!, accuracy: 0.001)
+    }
+    
+    func testToDegrees(){
+        let expectedResult: Double = 25.555
+        let result = sut?.toDegrees(fahrenheit: 78)
+        XCTAssertEqual(expectedResult, result!, accuracy: 0.001)
     }
 }
