@@ -117,5 +117,56 @@ class CalculatorTests: XCTestCase {
             sut.divide(n1: 4, n2: 2)
         }
     }
+    
+    func testArraySquared(){
+        //Given
+        var numbers = [Int]()
+        for n in 1...4{
+            numbers.append(n)
+        }
+        //When
+        let numbersSquared = sut.arraySquared(numberArray: numbers)
+        //Then
+        var expectedResult = [Int]()
+        expectedResult.append(1)
+        expectedResult.append(4)
+        expectedResult.append(9)
+        expectedResult.append(16)
+        XCTAssertEqual(expectedResult, numbersSquared)
+    }
+    
+    func testArraySquared2(){
+        var numbers = [Int]()
+        for n in 1...4{
+            numbers.append(n)
+        }
+        let numbersSquared = sut.arraySquared2(numberArray: numbers)
+        var expectedResult = [Int]()
+        expectedResult.append(1)
+        expectedResult.append(4)
+        expectedResult.append(9)
+        expectedResult.append(16)
+        XCTAssertEqual(expectedResult, numbersSquared)
+    }
+    
+    func testArraySquaredMeasure(){
+        var numbers = [Int]()
+        for n in 1...5000000{
+            numbers.append(n)
+        }
+        self.measure {
+            sut.arraySquared(numberArray: numbers)
+        }
+    }
+    
+    func testArraySquaredMeasure2(){
+        var numbers = [Int]()
+        for n in 1...5000000{
+            numbers.append(n)
+        }
+        self.measure {
+            sut.arraySquared2(numberArray: numbers)
+        }
+    }
 
 }
