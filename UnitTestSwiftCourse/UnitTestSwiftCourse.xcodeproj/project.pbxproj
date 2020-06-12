@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F35C11512493ED9400298CEF /* TemperatureCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C11502493ED9400298CEF /* TemperatureCalculator.swift */; };
+		F35C11532493EF1800298CEF /* TemperatureCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C11522493EF1800298CEF /* TemperatureCalculatorTest.swift */; };
 		F38B9620248D022D0085B82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B961F248D022D0085B82C /* AppDelegate.swift */; };
 		F38B9622248D022D0085B82C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B9621248D022D0085B82C /* SceneDelegate.swift */; };
 		F38B9624248D022D0085B82C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B9623248D022D0085B82C /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F35C11502493ED9400298CEF /* TemperatureCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCalculator.swift; sourceTree = "<group>"; };
+		F35C11522493EF1800298CEF /* TemperatureCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCalculatorTest.swift; sourceTree = "<group>"; };
 		F38B961C248D022D0085B82C /* UnitTestSwiftCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestSwiftCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38B961F248D022D0085B82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38B9621248D022D0085B82C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F38B9642248D08620085B82C /* Calculator.swift */,
+				F35C11502493ED9400298CEF /* TemperatureCalculator.swift */,
 			);
 			path = xctest;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				F38B9645248D0B580085B82C /* CalculatorTests.swift */,
+				F35C11522493EF1800298CEF /* TemperatureCalculatorTest.swift */,
 			);
 			path = xctest;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F38B9624248D022D0085B82C /* ViewController.swift in Sources */,
+				F35C11512493ED9400298CEF /* TemperatureCalculator.swift in Sources */,
 				F38B9643248D08620085B82C /* Calculator.swift in Sources */,
 				F38B9620248D022D0085B82C /* AppDelegate.swift in Sources */,
 				F38B9622248D022D0085B82C /* SceneDelegate.swift in Sources */,
@@ -234,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F38B9637248D022F0085B82C /* UnitTestSwiftCourseTests.swift in Sources */,
+				F35C11532493EF1800298CEF /* TemperatureCalculatorTest.swift in Sources */,
 				F38B9646248D0B580085B82C /* CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
