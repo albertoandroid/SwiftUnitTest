@@ -9,7 +9,7 @@ target 'UnitTestSwiftCourse' do
 
   target 'UnitTestSwiftCourseTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'MockingbirdFramework', '~> 0.13'
   end
 
 end
