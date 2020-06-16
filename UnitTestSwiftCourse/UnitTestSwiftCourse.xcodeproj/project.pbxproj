@@ -11,6 +11,9 @@
 		F35C11532493EF1800298CEF /* TemperatureCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C11522493EF1800298CEF /* TemperatureCalculatorTest.swift */; };
 		F35C115924963B6400298CEF /* StringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C115824963B6400298CEF /* StringManager.swift */; };
 		F35C115B24963C2400298CEF /* StringManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C115A24963C2400298CEF /* StringManagerTest.swift */; };
+		F35C11682498B8B400298CEF /* ValidNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C11672498B8B400298CEF /* ValidNumber.swift */; };
+		F35C116B2498B99E00298CEF /* ValidNumberTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C116A2498B99E00298CEF /* ValidNumberTest.swift */; };
+		F35C116D2498BB5C00298CEF /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C116C2498BB5C00298CEF /* Add.swift */; };
 		F38B9620248D022D0085B82C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B961F248D022D0085B82C /* AppDelegate.swift */; };
 		F38B9622248D022D0085B82C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B9621248D022D0085B82C /* SceneDelegate.swift */; };
 		F38B9624248D022D0085B82C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38B9623248D022D0085B82C /* ViewController.swift */; };
@@ -37,6 +40,9 @@
 		F35C11522493EF1800298CEF /* TemperatureCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCalculatorTest.swift; sourceTree = "<group>"; };
 		F35C115824963B6400298CEF /* StringManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManager.swift; sourceTree = "<group>"; };
 		F35C115A24963C2400298CEF /* StringManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManagerTest.swift; sourceTree = "<group>"; };
+		F35C11672498B8B400298CEF /* ValidNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidNumber.swift; sourceTree = "<group>"; };
+		F35C116A2498B99E00298CEF /* ValidNumberTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidNumberTest.swift; sourceTree = "<group>"; };
+		F35C116C2498BB5C00298CEF /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		F38B961C248D022D0085B82C /* UnitTestSwiftCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestSwiftCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38B961F248D022D0085B82C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F38B9621248D022D0085B82C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F35C11662498B89A00298CEF /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				F35C11672498B8B400298CEF /* ValidNumber.swift */,
+				F35C116C2498BB5C00298CEF /* Add.swift */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
+		F35C11692498B98B00298CEF /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				F35C116A2498B99E00298CEF /* ValidNumberTest.swift */,
+			);
+			path = mock;
+			sourceTree = "<group>";
+		};
 		F38B9613248D022D0085B82C = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +114,7 @@
 		F38B961E248D022D0085B82C /* UnitTestSwiftCourse */ = {
 			isa = PBXGroup;
 			children = (
+				F35C11662498B89A00298CEF /* mock */,
 				F38B9641248D08510085B82C /* xctest */,
 				F38B961F248D022D0085B82C /* AppDelegate.swift */,
 				F38B9621248D022D0085B82C /* SceneDelegate.swift */,
@@ -106,6 +130,7 @@
 		F38B9635248D022F0085B82C /* UnitTestSwiftCourseTests */ = {
 			isa = PBXGroup;
 			children = (
+				F35C11692498B98B00298CEF /* mock */,
 				F38B9644248D0B160085B82C /* xctest */,
 				F38B9636248D022F0085B82C /* UnitTestSwiftCourseTests.swift */,
 				F38B9638248D022F0085B82C /* Info.plist */,
@@ -236,8 +261,10 @@
 			files = (
 				F35C115924963B6400298CEF /* StringManager.swift in Sources */,
 				F38B9624248D022D0085B82C /* ViewController.swift in Sources */,
+				F35C11682498B8B400298CEF /* ValidNumber.swift in Sources */,
 				F35C11512493ED9400298CEF /* TemperatureCalculator.swift in Sources */,
 				F38B9643248D08620085B82C /* Calculator.swift in Sources */,
+				F35C116D2498BB5C00298CEF /* Add.swift in Sources */,
 				F38B9620248D022D0085B82C /* AppDelegate.swift in Sources */,
 				F38B9622248D022D0085B82C /* SceneDelegate.swift in Sources */,
 			);
@@ -251,6 +278,7 @@
 				F38B9637248D022F0085B82C /* UnitTestSwiftCourseTests.swift in Sources */,
 				F35C11532493EF1800298CEF /* TemperatureCalculatorTest.swift in Sources */,
 				F38B9646248D0B580085B82C /* CalculatorTests.swift in Sources */,
+				F35C116B2498B99E00298CEF /* ValidNumberTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
