@@ -35,6 +35,51 @@ public final class AddMock: UnitTestSwiftCourse.Add, Mockingbird.Mock {
       mock.sourceLocation = SourceLocation(__file, __line)
       return mock
     }
+
+    public static func initialize(`validNumber`: UnitTestSwiftCourse.ValidNumber, `print`: UnitTestSwiftCourse.Print, __file: StaticString = #file, __line: UInt = #line) -> AddMock {
+      let mock: AddMock = AddMock(validNumber: `validNumber`, print: `print`)
+      mock.sourceLocation = SourceLocation(__file, __line)
+      return mock
+    }
+  }
+
+  // MARK: Mocked print
+
+  override public var `print`: UnitTestSwiftCourse.Print? {
+    get {
+      let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "print.get", arguments: [], returnType: Swift.ObjectIdentifier((UnitTestSwiftCourse.Print?).self))
+      return mockingContext.didInvoke(invocation) { () -> UnitTestSwiftCourse.Print? in
+        let implementation = stubbingContext.implementation(for: invocation)
+        if let concreteImplementation = implementation as? () -> UnitTestSwiftCourse.Print? {
+          return concreteImplementation()
+        } else if let defaultValue = stubbingContext.defaultValueProvider.provideValue(for: (UnitTestSwiftCourse.Print?).self) {
+          return defaultValue
+        } else {
+          fatalError(stubbingContext.failTest(for: invocation))
+        }
+      }
+    }
+    set {
+      let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "print.set", arguments: [ArgumentMatcher(newValue)], returnType: Swift.ObjectIdentifier(Void.self))
+      mockingContext.didInvoke(invocation)
+      let implementation = stubbingContext.implementation(for: invocation)
+      if let concreteImplementation = implementation as? (UnitTestSwiftCourse.Print?) -> Void {
+        concreteImplementation(newValue)
+      } else {
+        (implementation as? () -> Void)?()
+      }
+    }
+  }
+
+  public func getPrint() -> Mockingbird.Mockable<Mockingbird.VariableDeclaration, () -> UnitTestSwiftCourse.Print?, UnitTestSwiftCourse.Print?> {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "print.get", arguments: [], returnType: Swift.ObjectIdentifier((UnitTestSwiftCourse.Print?).self))
+    return Mockingbird.Mockable<Mockingbird.VariableDeclaration, () -> UnitTestSwiftCourse.Print?, UnitTestSwiftCourse.Print?>(mock: self, invocation: invocation)
+  }
+
+  public func setPrint(_ newValue: @escaping @autoclosure () -> UnitTestSwiftCourse.Print?) -> Mockingbird.Mockable<Mockingbird.VariableDeclaration, (UnitTestSwiftCourse.Print?) -> Void, Void> {
+    let arguments: [Mockingbird.ArgumentMatcher] = [Mockingbird.resolve(newValue)]
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "print.set", arguments: arguments, returnType: Swift.ObjectIdentifier(Void.self))
+    return Mockingbird.Mockable<Mockingbird.VariableDeclaration, (UnitTestSwiftCourse.Print?) -> Void, Void>(mock: self, invocation: invocation)
   }
 
   // MARK: Mocked validNumber
@@ -100,12 +145,41 @@ public final class AddMock: UnitTestSwiftCourse.Add, Mockingbird.Mock {
     return Mockingbird.Mockable<Mockingbird.FunctionDeclaration, (Int, Int) -> Int, Int>(mock: self, invocation: invocation)
   }
 
+  // MARK: Mocked `addPrint`(`a`: Int, `b`: Int)
+
+  public override func `addPrint`(`a`: Int, `b`: Int) -> Void {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`addPrint`(`a`: Int, `b`: Int) -> Void", arguments: [Mockingbird.ArgumentMatcher(`a`), Mockingbird.ArgumentMatcher(`b`)], returnType: Swift.ObjectIdentifier((Void).self))
+    mockingContext.didInvoke(invocation) { () -> Void in
+      let implementation = stubbingContext.implementation(for: invocation)
+      if let concreteImplementation = implementation as? (Int, Int) -> Void {
+        concreteImplementation(`a`, `b`)
+      } else if let concreteImplementation = implementation as? () -> Void {
+        concreteImplementation()
+      }
+    }
+  }
+
+  public func `addPrint`(`a`: @escaping @autoclosure () -> Int, `b`: @escaping @autoclosure () -> Int) -> Mockingbird.Mockable<Mockingbird.FunctionDeclaration, (Int, Int) -> Void, Void> {
+    let arguments: [Mockingbird.ArgumentMatcher] = [Mockingbird.resolve(`a`), Mockingbird.resolve(`b`)]
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`addPrint`(`a`: Int, `b`: Int) -> Void", arguments: arguments, returnType: Swift.ObjectIdentifier((Void).self))
+    return Mockingbird.Mockable<Mockingbird.FunctionDeclaration, (Int, Int) -> Void, Void>(mock: self, invocation: invocation)
+  }
+
   // MARK: Mocked init(`validNumber`: UnitTestSwiftCourse.ValidNumber)
 
   public required override init(`validNumber`: UnitTestSwiftCourse.ValidNumber) {
     super.init(validNumber: `validNumber`)
     Mockingbird.checkVersion(for: self)
     let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "init(`validNumber`: UnitTestSwiftCourse.ValidNumber) ", arguments: [Mockingbird.ArgumentMatcher(`validNumber`)], returnType: Swift.ObjectIdentifier((Void).self))
+    mockingContext.didInvoke(invocation)
+  }
+
+  // MARK: Mocked init(`validNumber`: UnitTestSwiftCourse.ValidNumber, `print`: UnitTestSwiftCourse.Print)
+
+  public required override init(`validNumber`: UnitTestSwiftCourse.ValidNumber, `print`: UnitTestSwiftCourse.Print) {
+    super.init(validNumber: `validNumber`, print: `print`)
+    Mockingbird.checkVersion(for: self)
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "init(`validNumber`: UnitTestSwiftCourse.ValidNumber, `print`: UnitTestSwiftCourse.Print) ", arguments: [Mockingbird.ArgumentMatcher(`validNumber`), Mockingbird.ArgumentMatcher(`print`)], returnType: Swift.ObjectIdentifier((Void).self))
     mockingContext.didInvoke(invocation)
   }
 }
@@ -305,6 +379,72 @@ public final class CalculatorMock: UnitTestSwiftCourse.Calculator, Mockingbird.M
 /// Initialize a class mock of `UnitTestSwiftCourse.Calculator`.
 public func mock(_ type: UnitTestSwiftCourse.Calculator.Type, file: StaticString = #file, line: UInt = #line) -> CalculatorMock {
   return CalculatorMock(sourceLocation: SourceLocation(file, line))
+}
+
+// MARK: - Mocked Print
+
+public final class PrintMock: UnitTestSwiftCourse.Print, Mockingbird.Mock {
+  static let staticMock = Mockingbird.StaticMock()
+  public let mockingContext = Mockingbird.MockingContext()
+  public let stubbingContext = Mockingbird.StubbingContext()
+  public let mockMetadata = Mockingbird.MockMetadata(["generator_version": "0.13.0", "module_name": "UnitTestSwiftCourse"])
+  public var sourceLocation: Mockingbird.SourceLocation? {
+    get { return stubbingContext.sourceLocation }
+    set {
+      stubbingContext.sourceLocation = newValue
+      PrintMock.staticMock.stubbingContext.sourceLocation = newValue
+    }
+  }
+
+  fileprivate init(sourceLocation: Mockingbird.SourceLocation) {
+    super.init()
+    Mockingbird.checkVersion(for: self)
+    self.sourceLocation = sourceLocation
+  }
+
+  // MARK: Mocked `showError`()
+
+  public override func `showError`() -> Void {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`showError`() -> Void", arguments: [], returnType: Swift.ObjectIdentifier((Void).self))
+    mockingContext.didInvoke(invocation) { () -> Void in
+      let implementation = stubbingContext.implementation(for: invocation)
+      if let concreteImplementation = implementation as? () -> Void {
+        concreteImplementation()
+      } else if let concreteImplementation = implementation as? () -> Void {
+        concreteImplementation()
+      }
+    }
+  }
+
+  public func `showError`() -> Mockingbird.Mockable<Mockingbird.FunctionDeclaration, () -> Void, Void> {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`showError`() -> Void", arguments: [], returnType: Swift.ObjectIdentifier((Void).self))
+    return Mockingbird.Mockable<Mockingbird.FunctionDeclaration, () -> Void, Void>(mock: self, invocation: invocation)
+  }
+
+  // MARK: Mocked `showMessage`(`numero`: Int)
+
+  public override func `showMessage`(`numero`: Int) -> Void {
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`showMessage`(`numero`: Int) -> Void", arguments: [Mockingbird.ArgumentMatcher(`numero`)], returnType: Swift.ObjectIdentifier((Void).self))
+    mockingContext.didInvoke(invocation) { () -> Void in
+      let implementation = stubbingContext.implementation(for: invocation)
+      if let concreteImplementation = implementation as? (Int) -> Void {
+        concreteImplementation(`numero`)
+      } else if let concreteImplementation = implementation as? () -> Void {
+        concreteImplementation()
+      }
+    }
+  }
+
+  public func `showMessage`(`numero`: @escaping @autoclosure () -> Int) -> Mockingbird.Mockable<Mockingbird.FunctionDeclaration, (Int) -> Void, Void> {
+    let arguments: [Mockingbird.ArgumentMatcher] = [Mockingbird.resolve(`numero`)]
+    let invocation: Mockingbird.Invocation = Mockingbird.Invocation(selectorName: "`showMessage`(`numero`: Int) -> Void", arguments: arguments, returnType: Swift.ObjectIdentifier((Void).self))
+    return Mockingbird.Mockable<Mockingbird.FunctionDeclaration, (Int) -> Void, Void>(mock: self, invocation: invocation)
+  }
+}
+
+/// Initialize a class mock of `UnitTestSwiftCourse.Print`.
+public func mock(_ type: UnitTestSwiftCourse.Print.Type, file: StaticString = #file, line: UInt = #line) -> PrintMock {
+  return PrintMock(sourceLocation: SourceLocation(file, line))
 }
 
 // MARK: - Mocked SceneDelegate
