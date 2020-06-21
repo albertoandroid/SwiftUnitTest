@@ -87,11 +87,26 @@ class AddTest: XCTestCase {
         //Given
         given(mockValidNumber.check(number: any())) ~> true
         //When
-        sut?.addPrint(a: 3, b: 4)
+        sut?.addPrint(a: 3, b: 3)
         //Then
-        //XCTAssertEqual(7, result)
+        //verify(mockValidNumber.check(number: 3)).wasCalled()
+        verify(mockValidNumber.check(number: 3)).wasCalled(exactly(2))
+        verify(mockValidNumber.check(number: 9)).wasNeverCalled()
+        verify(mockValidNumber.check(number: 3)).wasCalled(atLeast(1))
+        verify(mockValidNumber.check(number: 1)).wasCalled(atMost(3))
+        
+        verify(mockPrint.showMessage(numero: 6)).wasCalled()
+
     }
     
+    func testAddPrintShowError(){
+        //Given
+        given(mockValidNumber.check(number: any())) ~> false
+        //When
+        sut?.addPrint(a: 3, b: 3)
+        //Then
+        verify(mockPrint.showError()).wasCalled()
+    }
     
     
 }
